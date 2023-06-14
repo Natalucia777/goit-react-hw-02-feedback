@@ -1,24 +1,33 @@
 import React, { Component } from 'react';
 import Sections from './Sections/Sections';
 import Feedback from './Feedback/Feedback';
+import Statistics from './Statistics/Statistics';
 
 class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
-  }
-  on
+  };
+  onFeedback = (state) => {
+    this.setState(prevState => ({
+      [state]: prevState[state] + 1,
+    }));
+  };
+    
   render() {
     return (
       <div>
-        <Sections>
-          <Feedback></Feedback>
+        <Sections title='Please leave feedback'>
+          <Feedback
+            options={options}
+            onFeedback={this.onFeedback}
+          ></Feedback>
         </Sections>
 
-        <Sections>
-          <Statistic></Statistic>
-          <Notification></Notification>
+        <Sections title='Statistics'>
+          <Statistics></Statistics>
+          <Notification message='There is no feedback'></Notification>
         </Sections>
       </div>
     );
