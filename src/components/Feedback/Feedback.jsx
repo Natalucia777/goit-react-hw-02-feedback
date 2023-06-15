@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-import { Component } from 'react';
+// import { Component } from 'react';
 
 const Feedback = ({ options, onFeedback}) => {
   return (
-    <Component>
       <div>
         {options.map(option => {
           return (
@@ -15,7 +14,6 @@ const Feedback = ({ options, onFeedback}) => {
           );
           })}
       </div>
-    </Component>
   );
 };
 
