@@ -35,13 +35,14 @@ class App extends Component {
           />
         </Sections>
         <Sections title='Statistics'>
-          <Statistics
+          {this.countTotalFeedback() > 0 ? ( 
+            <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
             total={this.countTotalFeedback()}
             positivePercentage={this.countPositiveFeedbackPercentage()} ></Statistics>
-          <Notification message='There is no feedback'></Notification>
+          ) : (<Notification message='There is no feedback'></Notification>) }
         </Sections>
       </div>
     );
