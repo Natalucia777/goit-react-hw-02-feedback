@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import { Component } from 'react';
 import { BtnList } from './Feedback.styled';
 import { Btn } from './Feedback.styled';
 
